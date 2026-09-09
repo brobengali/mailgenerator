@@ -10,7 +10,7 @@ export class RAGEngine {
   constructor(records: EmailRecord[]) {
     this.vectorStore = new VectorStore(records);
     this.apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || null;
-    if (this.apiKey) {
+    if (this.apiKey && typeof this.apiKey === 'string' && this.apiKey.startsWith('AIzaSy')) {
       this.genAI = new GoogleGenerativeAI(this.apiKey);
     }
   }

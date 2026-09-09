@@ -5,7 +5,7 @@ export class SemanticEvaluator {
 
   constructor() {
     const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || null;
-    if (apiKey) {
+    if (apiKey && typeof apiKey === 'string' && apiKey.startsWith('AIzaSy')) {
       this.genAI = new GoogleGenerativeAI(apiKey);
     }
   }
@@ -17,14 +17,20 @@ export class SemanticEvaluator {
     if (this.genAI) {
       try {
         const model = this.genAI.getGenerativeModel({ model: 'embedding-001' });
-        const resA = await model.embedContent(candidate);
-        const resB = await model.embedContent(reference);
+        const embedPromise = Promise.all([
+          model.embedContent(candidate),
+          model.embedContent(reference)
+        ]);
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Embedding timeout')), 1500)
+        );
+        const [resA, resB] = (await Promise.race([embedPromise, timeoutPromise])) as any;
         const vecA = resA.embedding.values;
         const vecB = resB.embedding.values;
         const cosine = this.vectorCosine(vecA, vecB);
         return Math.min(1.0, Math.max(0, Number(cosine.toFixed(3))));
       } catch (err) {
-        // Soft fallback to term vector similarity
+        // Fallback to local term vector similarity immediately
       }
     }
     return this.computeTermSimilarity(candidate, reference);

@@ -55,30 +55,6 @@ export class VectorStore {
     const fullQueryText = `${querySubject}\n${queryBody}`;
     const queryTokens = this.tokenize(fullQueryText);
 
-    if (this.genAI) {
-      try {
-        const model = this.genAI.getGenerativeModel({ model: 'embedding-001' });
-        const queryEmbeddingRes = await model.embedContent(fullQueryText);
-        const queryVector = queryEmbeddingRes.embedding.values;
-
-        const results: RetrievedExample[] = [];
-
-        for (const record of this.records) {
-          const docText = `${record.subject}\n${record.incoming_email}\n${record.metadata?.intent || ''}`;
-          const docEmbeddingRes = await model.embedContent(docText);
-          const docVector = docEmbeddingRes.embedding.values;
-
-          const score = this.vectorCosine(queryVector, docVector);
-          results.push({ record, similarity_score: score });
-        }
-
-        results.sort((a, b) => b.similarity_score - a.similarity_score);
-        return results.slice(0, topK);
-      } catch (err) {
-        // Fallback to TF-IDF cosine matching
-      }
-    }
-
     const scored: RetrievedExample[] = this.records.map(record => {
       const intentText = record.metadata?.intent || '';
       const docText = `${record.subject}\n${record.incoming_email}\n${intentText}`;
