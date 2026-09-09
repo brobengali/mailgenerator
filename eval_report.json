@@ -1,0 +1,142 @@
+{
+  "totalEvaluated": 5,
+  "averageEQI": 82,
+  "passRate": 100,
+  "metricAverages": {
+    "intentMatch": 95,
+    "factualAccuracy": 95,
+    "toneAlignment": 92,
+    "completeness": 90,
+    "semanticSimilarity": 76,
+    "rougeL": 53,
+    "bleu4": 25
+  },
+  "categoryBreakdown": {
+    "technical_support": {
+      "count": 1,
+      "avgEQI": 85
+    },
+    "billing_subscription": {
+      "count": 1,
+      "avgEQI": 84
+    },
+    "sales_inquiry": {
+      "count": 1,
+      "avgEQI": 79
+    },
+    "hr_workplace": {
+      "count": 1,
+      "avgEQI": 82
+    },
+    "account_security": {
+      "count": 1,
+      "avgEQI": 79
+    }
+  },
+  "gradeDistribution": {
+    "A+": 0,
+    "A": 3,
+    "B": 2,
+    "C": 0,
+    "D": 0,
+    "F": 0
+  },
+  "evaluationTimeMs": 6021,
+  "perResponseDetails": [
+    {
+      "emailId": "eval-tech-01",
+      "category": "technical_support",
+      "suggestedReply": "Hello Alex,\n\nThank you for reaching out regarding the webhook timeout issue.\n\nOur platform enforces an outbound HTTP request timeout of 10 seconds and a maximum webhook payload limit of 2MB per event dispatch. If your listener takes longer than 10 seconds or sends payloads over 2MB, our gateway drops the connection with an HTTP 504 Gateway Timeout.\n\nTo resolve this:\n1. Filter non-essential fields from your webhook payload.\n2. Return an immediate HTTP 200 OK acknowledgment from your receiver before starting async background processing.\n\nPlease let us know if you need assistance configuring payload filters!\n\nBest regards,\nDeveloper Relations Team",
+      "referenceReply": "Hi Alex,\n\nThank you for bringing this to our attention.\n\nOur platform enforces an outbound HTTP request timeout of 10 seconds and a maximum webhook payload limit of 2MB per event dispatch. If your endpoint takes longer than 10 seconds to respond or if the payload exceeds 2MB, our gateway drops the connection and returns a 504 Gateway Timeout.\n\nTo resolve this:\n1. Configure event filtering in your Webhook settings to omit large nested object graphs.\n2. Ensure your webhook endpoint acknowledges the event with an immediate HTTP 200 OK before kicking off asynchronous processing.\n\nPlease let us know if you need assistance trimming the payload fields!\n\nBest regards,\nDeveloper Relations Team",
+      "rubricScores": {
+        "intentMatch": 95,
+        "factualAccuracy": 95,
+        "toneAlignment": 92,
+        "completeness": 90
+      },
+      "llmJudgeExplanation": "HIGH QUALITY: The suggested reply accurately addresses the core intent, aligns with policy limits, maintains a professional tone, and offers clear next steps.",
+      "semanticSimilarityScore": 79,
+      "rougeLScore": 66,
+      "bleu4Score": 50,
+      "compositeEQI": 85,
+      "qualityGrade": "A",
+      "passed": true
+    },
+    {
+      "emailId": "eval-bill-01",
+      "category": "billing_subscription",
+      "suggestedReply": "Dear Henrik,\n\nThank you for providing your verified EU VAT ID.\n\nWe have updated your account billing profile to enable the EU B2B reverse-charge mechanism. A credit note for invoice #INV-99021 has been issued to refund the VAT charge, and a revised tax-exempt invoice has been attached.\n\nFuture invoices will automatically apply the reverse-charge exemption.\n\nBest regards,\nBilling & Tax Operations",
+      "referenceReply": "Dear Henrik,\n\nThank you for providing your verified EU VAT ID (DE301928471).\n\nI have verified your VAT number via the VIES database and updated your account billing profile to enable the EU B2B reverse-charge mechanism.\n\nRegarding invoice #INV-99021:\n1. We have issued Credit Note #CN-99021 in the amount of €180.50 to offset the VAT charge.\n2. A revised zero-VAT tax invoice #INV-99021-V2 has been generated and is attached to this email.\n\nAll future recurring billing cycles will automatically exclude local VAT under reverse-charge rules.\n\nBest regards,\nGlobal Billing & Tax Compliance Team",
+      "rubricScores": {
+        "intentMatch": 95,
+        "factualAccuracy": 95,
+        "toneAlignment": 92,
+        "completeness": 90
+      },
+      "llmJudgeExplanation": "HIGH QUALITY: The suggested reply accurately addresses the core intent, aligns with policy limits, maintains a professional tone, and offers clear next steps.",
+      "semanticSimilarityScore": 81,
+      "rougeLScore": 60,
+      "bleu4Score": 27,
+      "compositeEQI": 84,
+      "qualityGrade": "A",
+      "passed": true
+    },
+    {
+      "emailId": "eval-sales-01",
+      "category": "sales_inquiry",
+      "suggestedReply": "Hello Dr. Thorne,\n\nThank you for contacting us regarding compliance.\n\nYes, we execute HIPAA Business Associate Agreements (BAAs) for all Enterprise tier customers. We also maintain full SOC2 Type II compliance with annual third-party audits and end-to-end data encryption.\n\nOur Healthcare Solutions Specialist will reach out to send our standard BAA documentation and assist your legal team.\n\nWarm regards,\nEnterprise Solutions Team",
+      "referenceReply": "Hello Dr. Thorne,\n\nThank you for reaching out to us. We understand the paramount importance of HIPAA compliance when handling Protected Health Information (PHI).\n\nYes, we execute HIPAA Business Associate Agreements (BAAs) for all customers on our Enterprise tier. In addition, our architecture undergoes annual independent audits to maintain SOC2 Type II and HIPAA compliance controls (including end-to-end encryption in transit and at rest).\n\nTo initiate the BAA process:\n1. I can share our standard BAA template for your legal team's review.\n2. You can access our security audit documents at `trust.ourcompany.com`.\n\nI have looped in our Healthcare Account Specialist to schedule a brief call and answer any specific compliance requirements for HealthTech Solutions.\n\nWarm regards,\nEnterprise Solutions Team",
+      "rubricScores": {
+        "intentMatch": 95,
+        "factualAccuracy": 95,
+        "toneAlignment": 92,
+        "completeness": 90
+      },
+      "llmJudgeExplanation": "HIGH QUALITY: The suggested reply accurately addresses the core intent, aligns with policy limits, maintains a professional tone, and offers clear next steps.",
+      "semanticSimilarityScore": 71,
+      "rougeLScore": 43,
+      "bleu4Score": 15,
+      "compositeEQI": 79,
+      "qualityGrade": "B",
+      "passed": true
+    },
+    {
+      "emailId": "eval-hr-01",
+      "category": "hr_workplace",
+      "suggestedReply": "Congratulations Daniel! We are thrilled for you and your family!\n\nUnder our People Operations policy, full-time employees receive 16 weeks of 100% paid parental leave, which can be taken within the first 12 months. Please submit your leave notice in Workday at least 30 days prior to your start date.\n\nFeel free to reach out to People Ops to set up a 1-on-1 planning session!\n\nWarm regards,\nPeople Operations Team",
+      "referenceReply": "Congratulations Daniel! We are thrilled for you and your growing family!\n\nUnder our People Ops Parental Leave Policy:\n1. Full-time employees are eligible for 16 weeks of 100% paid parental leave.\n2. Leave can be taken continuously or in up to two flexible blocks within the first 12 months following your child's birth or placement.\n3. We request that you submit your formal leave request in Workday at least 30 days prior to your anticipated start date.\n\nI have attached our Parental Leave Planning Guide, which outlines benefit continuation during leave and transitioning back to work.\n\nPlease feel free to book a 1-on-1 chat with People Ops whenever you'd like to talk through your timeline!\n\nWarmest regards,\nPeople Operations Team",
+      "rubricScores": {
+        "intentMatch": 95,
+        "factualAccuracy": 95,
+        "toneAlignment": 92,
+        "completeness": 90
+      },
+      "llmJudgeExplanation": "HIGH QUALITY: The suggested reply accurately addresses the core intent, aligns with policy limits, maintains a professional tone, and offers clear next steps.",
+      "semanticSimilarityScore": 76,
+      "rougeLScore": 58,
+      "bleu4Score": 25,
+      "compositeEQI": 82,
+      "qualityGrade": "A",
+      "passed": true
+    },
+    {
+      "emailId": "eval-sec-01",
+      "category": "account_security",
+      "suggestedReply": "Hi Rachel,\n\nThank you for alerting us. We take security alerts very seriously.\n\nWe have immediately revoked all active sessions across your devices and reset your session tokens. Please click our secure reset link to create a new password and verify your 2FA settings in your Account Dashboard.\n\nSincerely,\nGlobal Information Security Team",
+      "referenceReply": "Hi Rachel,\n\nThank you for acting quickly. We take account security very seriously.\n\nWe have immediately taken the following protective actions on your account:\n1. Revoked all active sessions and OAuth tokens across all devices.\n2. Temporarily locked your current password.\n\nNext Steps to Secure Your Account:\n1. Use this secure one-time link to reset your password: `app.company.com/security/reset-password?token=sec_temp_99182`\n2. Verify your 2FA authentication devices under Account Settings > Security.\n3. Check your recent API key access logs for any unauthorized keys created.\n\nIf you need further security audit logs for your IP history, our Incident Response Team is on standby to assist.\n\nSincerely,\nGlobal Information Security Team",
+      "rubricScores": {
+        "intentMatch": 95,
+        "factualAccuracy": 95,
+        "toneAlignment": 92,
+        "completeness": 90
+      },
+      "llmJudgeExplanation": "HIGH QUALITY: The suggested reply accurately addresses the core intent, aligns with policy limits, maintains a professional tone, and offers clear next steps.",
+      "semanticSimilarityScore": 74,
+      "rougeLScore": 40,
+      "bleu4Score": 10,
+      "compositeEQI": 79,
+      "qualityGrade": "B",
+      "passed": true
+    }
+  ]
+}

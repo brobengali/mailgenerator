@@ -1,0 +1,39 @@
+{
+  "name": "ai-email-response-evaluator",
+  "version": "1.0.0",
+  "description": "Complete, production-quality AI Email Suggested-Response System with Grounded Few-Shot RAG Generation, Multi-Dimensional Accuracy Evaluator, Safety Gating, and Human Metric Validation Benchmark",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "tsx scripts/runTests.ts",
+    "eval": "tsx scripts/runEval.ts",
+    "calibrate": "tsx scripts/runCalibration.ts",
+    "ablation": "tsx scripts/runAblation.ts",
+    "generate": "tsx scripts/runGenerator.ts",
+    "dataset:gen": "tsx scripts/generateDataset.ts"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.1",
+    "tailwind-merge": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}

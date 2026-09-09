@@ -1,0 +1,19 @@
+{
+  "baseline_a_zero_shot": {
+    "avg_score": 0.966,
+    "pass_rate": 100,
+    "safety_gated_count": 0
+  },
+  "baseline_b_rag": {
+    "avg_score": 0.966,
+    "pass_rate": 100,
+    "safety_gated_count": 0
+  },
+  "baseline_c_rag_safety": {
+    "avg_score": 0.966,
+    "pass_rate": 100,
+    "safety_gated_count": 0
+  },
+  "lift_b_over_a_pct": 0,
+  "lift_c_over_b_pct": 0
+}

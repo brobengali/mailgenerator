@@ -1,0 +1,12 @@
+{
+  "sample_size": 40,
+  "spearman_rho": 0.935,
+  "pearson_r": 0.954,
+  "mae": 0.595,
+  "dimension_correlations": {
+    "task_completion": 0.916,
+    "key_fact_consistency": 0.897,
+    "semantic_correctness": 0.86
+  },
+  "statistically_significant": true
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "past-tech-01",
+    "category": "technical_support",
+    "subject": "Getting 429 Rate Limit Errors on /api/v2/webhooks endpoint",
+    "incomingBody": "Hi Support Team,\n\nWe are experiencing severe rate limiting issues on our integration. Our backend sends events to /api/v2/webhooks during high traffic hours (approx 5,000 requests/min). Starting yesterday around 2 PM UTC, we started receiving 429 Too Many Requests errors.\n\nCould you check if our API rate limit was recently adjusted, or if we can request a quota bump for production?\n\nThanks,\nMarcus Chen\nLead Platform Engineer @ FinTech Core",
+    "sentReply": "Hello Marcus,\n\nThank you for reaching out to engineering support.\n\nOur system logs indicate your tier currently has a default threshold of 2,500 requests/minute on the /api/v2/webhooks endpoint. During peak hours, burst traffic over this limit triggers our automated rate limiter to maintain system stability.\n\nWe can increase your organization's rate limit tier to 10,000 requests/min for production environments. To process this bump, please confirm your Account ID (found under Settings > Developer Portal) and provide a target date for your high-volume deployment.\n\nIn the interim, we recommend implementing exponential backoff with jitter on your retry logic.\n\nBest regards,\nAlex Rivera\nSenior Technical Support Engineer",
+    "sentiment": "urgent",
+    "urgency": "high",
+    "intent": "Request API rate limit quota increase for production webhooks",
+    "keyEntities": ["/api/v2/webhooks", "429 Too Many Requests", "FinTech Core", "Quota Bump"]
+  },
+  {
+    "id": "past-tech-02",
+    "category": "technical_support",
+    "subject": "SSL Certificate verification failed on custom domain app.acme.com",
+    "incomingBody": "Hello,\n\nOur custom domain app.acme.com is currently throwing SSL handshake error ERR_CERT_COMMON_NAME_INVALID in Chrome. Users cannot log into our dashboard. We added the CNAME record dns.provider.com 48 hours ago as instructed.\n\nPlease fix this ASAP as our customers are affected.\n\nRegards,\nSarah Jenkins",
+    "sentReply": "Hi Sarah,\n\nThank you for alerting us. I understand how critical domain availability is for your users.\n\nI inspected your CAA and DNS records for app.acme.com. While the CNAME record is resolved, your DNS provider has an active CAA record that restricts Let's Encrypt from issuing certificates for your domain.\n\nTo resolve this immediately:\n1. Log into your DNS provider (e.g. Cloudflare / Route53).\n2. Add a CAA record permitting `letsencrypt.org` (issue \"letsencrypt.org\").\n3. Once updated, navigate to Dashboard > Settings > Domains and click 'Re-issue SSL Certificate'.\n\nProvisioning takes approximately 5–10 minutes after CAA entry verification.\n\nWarm regards,\nDavid Kim\nInfrastructure Operations Team",
+    "sentiment": "frustrated",
+    "urgency": "critical",
+    "intent": "Troubleshoot SSL Certificate handshake error on custom domain",
+    "keyEntities": ["app.acme.com", "ERR_CERT_COMMON_NAME_INVALID", "CAA record", "Let's Encrypt"]
+  },
+  {
+    "id": "past-tech-03",
+    "category": "technical_support",
+    "subject": "Database connection pool timeouts during night ETL jobs",
+    "incomingBody": "Hi team,\n\nEvery night around 1 AM, our automated ETL batch job crashes with `ConnectionPoolTimeoutException: Timeout waiting for connection from pool`. We have configured maxConnections=50 in our DB config.\n\nIs there a server-side idle timeout closing connections prematurely?\n\nBest,\nVikram Patel",
+    "sentReply": "Hi Vikram,\n\nThanks for contacting backend support.\n\nYes, our managed database clusters automatically terminate idle connections after 600 seconds (10 minutes) of inactivity to prevent connection leaks. During long-running ETL processes, if connections sit idle between batch reads, they are closed server-side.\n\nWe recommend two options:\n1. Enable keep-alive ping or `testOnBorrow=true` in your application connection pool configuration.\n2. Increase `idleTimeout` setting in your pool driver to match your batch cycle timing.\n\nAdditionally, consider wrapping your batch reads in smaller transaction chunks to avoid long idle periods.\n\nBest regards,\nElena Rostova\nDatabase Infrastructure Support",
+    "sentiment": "neutral",
+    "urgency": "medium",
+    "intent": "Resolve database connection pool timeout during scheduled ETL jobs",
+    "keyEntities": ["ConnectionPoolTimeoutException", "maxConnections", "idleTimeout", "ETL batch"]
+  },
+  {
+    "id": "past-bill-01",
+    "category": "billing_subscription",
+    "subject": "Duplicate charge on monthly subscription invoice #INV-88492",
+    "incomingBody": "Hi Billing Team,\n\nI checked our corporate credit card statement today and noticed two identical charges of $499.00 on March 1st from your company (Invoice #INV-88492 and #INV-88493).\n\nWe only have one active Growth plan. Could you please refund the duplicate charge back to our card?\n\nThanks,\nJennifer Adams\nFinance Manager @ CloudScale Inc.",
+    "sentReply": "Dear Jennifer,\n\nThank you for bringing this to our attention, and apologies for the billing confusion!\n\nI investigated your account and confirmed that invoice #INV-88493 was accidentally processed twice due to a web gateway retry during renewal processing. \n\nI have issued a full refund of $499.00 back to your corporate card ending in 4092. Please allow 3–5 business days for the credit to reflect on your statement depending on your banking institution.\n\nInvoice #INV-88493 has been voided, and your Growth plan remains active with your next renewal set for April 1st.\n\nSincerely,\nRachel Green\nBilling & Finance Operations",
+    "sentiment": "frustrated",
+    "urgency": "high",
+    "intent": "Request refund for duplicate subscription charge on credit card",
+    "keyEntities": ["INV-88492", "INV-88493", "$499.00", "Growth plan", "CloudScale Inc."]
+  },
+  {
+    "id": "past-bill-02",
+    "category": "billing_subscription",
+    "subject": "Request for updated W-9 Tax Form and Vendor Direct Deposit Info",
+    "incomingBody": "Hello Accounts Receivable,\n\nOur procurement department requires an updated 2026 W-9 form and ACH direct deposit details for your company to approve invoice payments for the upcoming quarter.\n\nPlease attach the signed W-9 PDF at your earliest convenience.\n\nBest regards,\nTom Miller\nProcurement Specialist @ Enterprise Corp",
+    "sentReply": "Hello Tom,\n\nThank you for your request.\n\nI have attached our current signed 2026 Form W-9 (Taxpayer Identification Number & Certification) as requested for Enterprise Corp's vendor records.\n\nFor security reasons, our ACH and direct deposit banking details are provided on page 2 of our official invoice PDF or can be securely verified by calling our finance line at +1 (800) 555-0199.\n\nPlease let us know if your procurement portal requires any additional vendor setup questionnaires!\n\nBest regards,\nSamantha Wright\nAccounts Receivable Manager",
+    "sentiment": "neutral",
+    "urgency": "medium",
+    "intent": "Provide corporate W-9 tax form and vendor payment details",
+    "keyEntities": ["W-9 Tax Form", "Enterprise Corp", "ACH banking details", "Procurement"]
+  },
+  {
+    "id": "past-sales-01",
+    "category": "sales_inquiry",
+    "subject": "SOC2 Type II Compliance Report & Enterprise Security Questionnaire",
+    "incomingBody": "Hi Sales Team,\n\nWe are evaluating your platform for our enterprise stack (approx 1,200 seats). Before we can finalize the security review, our CIS team requires your latest SOC2 Type II audit report and ISO 27001 certificate under NDA.\n\nCan you send over the NDA link or share the security portal access?\n\nBest,\nDavid Sterling\nDirector of Security @ Horizon Bank",
+    "sentReply": "Hello David,\n\nThank you for considering our platform for Horizon Bank's enterprise deployment!\n\nWe maintain full SOC2 Type II compliance (covering Trust Services Criteria for Security, Availability, and Confidentiality) as well as ISO 27001 certification.\n\nYou can access our Trust Center directly at `trust.ourcompany.com/horizon-bank`. From there, you can execute a mutual NDA digitally and immediately download:\n- 2025/2026 SOC2 Type II Audit Report\n- ISO 27001 Certification & Summary\n- CAIQ / SIG Security Questionnaire answers\n\nI have also CC'd our Enterprise Account Executive, Mark Vance, who can assist with any custom architecture or compliance discussions.\n\nBest regards,\nLaura Bennett\nEnterprise Solutions Team",
+    "sentiment": "neutral",
+    "urgency": "medium",
+    "intent": "Request SOC2 Type II report and security documentation under NDA",
+    "keyEntities": ["SOC2 Type II", "Horizon Bank", "1,200 seats", "ISO 27001", "Trust Center"]
+  },
+  {
+    "id": "past-sales-02",
+    "category": "sales_inquiry",
+    "subject": "Volume Pricing & Annual Commitment Discounts for 500+ users",
+    "incomingBody": "Hello,\n\nWe currently have 85 team members on the Business tier. We are planning to roll out the app to our entire global team of 650 users next month.\n\nDo you offer volume tier discounts for annual upfront commitments at 500+ seats? Can we set up a quick 15-min call to discuss pricing?\n\nRegards,\nCarlos Rodriguez\nVP Operations @ Global Logistics Ltd",
+    "sentReply": "Hi Carlos,\n\nGreat news on your team's expansion! We would love to support Global Logistics Ltd's global rollout.\n\nYes, we offer tier-based volume discounts for seat counts above 250 users on annual plans:\n- 250–499 seats: 15% discount off standard rate\n- 500+ seats: 25% discount + dedicated Success Manager + priority 24/7 SLA\n\nI have emailed you a calendar invite link to pick a 15-minute slot with our Senior Account Executive this week. We can walk through custom billing schedules and enterprise onboarding.\n\nLooking forward to speaking with you!\n\nWarm regards,\nEmily Watson\nSales Director",
+    "sentiment": "curious",
+    "urgency": "medium",
+    "intent": "Inquire about volume discounts for 500+ annual seats and schedule demo",
+    "keyEntities": ["650 users", "Global Logistics Ltd", "Volume Discount", "Annual Plan"]
+  },
+  {
+    "id": "past-hr-01",
+    "category": "hr_workplace",
+    "subject": "Annual Home Office Ergonomic Stipend Reimbursement Policy",
+    "incomingBody": "Hi HR Team,\n\nI recently purchased a standing desk and ergonomic chair for my home office setup ($750 total). What is the exact process for submitting receipts for the annual remote work stipend?\n\nDoes it go through Expensify or Workday?\n\nThanks,\nLisa Wong\nSenior Product Designer",
+    "sentReply": "Hi Lisa,\n\nThanks for reaching out!\n\nUnder our Remote Work Ergonomic Policy, all full-time team members are eligible for up to $800 annually for home office equipment.\n\nTo submit your $750 reimbursement:\n1. Log into Expensify (`expensify.company.com`).\n2. Create a new expense report titled 'Ergonomic Home Office Stipend - 2026'.\n3. Select the expense category `Equipment - Remote Stipend`.\n4. Attach itemized receipts showing the purchase price and payment method.\n\nOnce approved by your manager, reimbursements are paid out in the next bi-weekly payroll cycle.\n\nBest regards,\nKaren Vance\nPeople Operations & HR Specialist",
+    "sentiment": "curious",
+    "urgency": "low",
+    "intent": "Clarify process for submitting remote work equipment reimbursement",
+    "keyEntities": ["Ergonomic Stipend", "Expensify", "$750", "Remote Work Policy"]
+  },
+  {
+    "id": "past-sec-01",
+    "category": "account_security",
+    "subject": "Lost 2FA phone - Cannot log in to Admin Portal",
+    "incomingBody": "HELP!\n\nI lost my phone yesterday while traveling and cannot receive SMS 2FA codes or access my Authenticator app. I am an account admin for Workspace ID `ws-99218` and need to access the platform before our customer webinar in 2 hours.\n\nHow can I reset my 2FA authentication?\n\nUrgent,\nMichael Chang",
+    "sentReply": "Hello Michael,\n\nWe understand this is an urgent security situation, and we are ready to assist you safely.\n\nBecause 2FA resets grant high-level admin privileges, we must complete identity verification to protect workspace `ws-99218`:\n1. Please reply to this email from your registered corporate email domain.\n2. Provide your emergency 16-digit recovery code generated during initial 2FA setup.\n3. Alternatively, have another active workspace admin confirm this request via our internal security portal.\n\nOnce verified, our security desk will issue a temporary 1-hour bypass code to get you into your webinar on time.\n\nSincerely,\nSecurity Incident Response Team",
+    "sentiment": "urgent",
+    "urgency": "critical",
+    "intent": "Request 2FA authentication reset after losing phone device",
+    "keyEntities": ["2FA Reset", "ws-99218", "Admin Portal", "Identity Verification"]
+  }
+]

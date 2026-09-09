@@ -1,0 +1,62 @@
+[
+  {
+    "id": "eval-tech-01",
+    "category": "technical_support",
+    "subject": "Webhook failure HTTP 504 Gateway Timeout during webhook push",
+    "incomingEmail": "Hello Technical Support,\n\nOur webhook listener service is receiving HTTP 504 Gateway Timeout errors when your platform pushes event payloads for `order.completed` events. We noticed this started happening when payloads exceeded 5MB.\n\nWhat is the payload size limit and timeout threshold for outbound webhooks?\n\nRegards,\nAlex Rivera\nSenior Tech Lead @ E-Com Platform",
+    "expertReferenceReply": "Hi Alex,\n\nThank you for bringing this to our attention.\n\nOur platform enforces an outbound HTTP request timeout of 10 seconds and a maximum webhook payload limit of 2MB per event dispatch. If your endpoint takes longer than 10 seconds to respond or if the payload exceeds 2MB, our gateway drops the connection and returns a 504 Gateway Timeout.\n\nTo resolve this:\n1. Configure event filtering in your Webhook settings to omit large nested object graphs.\n2. Ensure your webhook endpoint acknowledges the event with an immediate HTTP 200 OK before kicking off asynchronous processing.\n\nPlease let us know if you need assistance trimming the payload fields!\n\nBest regards,\nDeveloper Relations Team",
+    "adversarialReplies": {
+      "offTopic": "Hi Alex,\n\nThank you for reaching out about your billing account. We offer several enterprise pricing plans that include higher storage and server capacity. Please let us know if you would like a sales quote for upgrading your plan.\n\nBest regards,\nCustomer Sales Team",
+      "hallucinated": "Hi Alex,\n\nOur system allows unlimited payload sizes up to 500MB without any timeout limits. You can simply turn off the SSL verification in your server configuration settings to fix the HTTP 504 Gateway Timeout error immediately.\n\nRegards,\nSupport Team",
+      "overlyBrief": "We have timeouts. Make your payloads smaller."
+    }
+  },
+  {
+    "id": "eval-bill-01",
+    "category": "billing_subscription",
+    "subject": "VAT ID Tax Exemption invoice adjustment request for EU entity",
+    "incomingEmail": "Hi Accounts Payable,\n\nWe recently updated our company address to our EU entity (VAT ID: DE301928471). However, invoice #INV-99021 still includes a 19% German VAT charge of €180.50.\n\nCan you apply reverse-charge VAT tax exemption and issue a revised credit note for invoice #INV-99021?\n\nKind regards,\nHenrik Weber\nFinancial Controller @ Berlin Software GmbH",
+    "expertReferenceReply": "Dear Henrik,\n\nThank you for providing your verified EU VAT ID (DE301928471).\n\nI have verified your VAT number via the VIES database and updated your account billing profile to enable the EU B2B reverse-charge mechanism.\n\nRegarding invoice #INV-99021:\n1. We have issued Credit Note #CN-99021 in the amount of €180.50 to offset the VAT charge.\n2. A revised zero-VAT tax invoice #INV-99021-V2 has been generated and is attached to this email.\n\nAll future recurring billing cycles will automatically exclude local VAT under reverse-charge rules.\n\nBest regards,\nGlobal Billing & Tax Compliance Team",
+    "adversarialReplies": {
+      "offTopic": "Dear Henrik,\n\nThank you for reporting the bug in our dashboard. Our software team will release a hotfix in the next sprint cycle to resolve the button alignment issue.\n\nBest regards,\nQA Team",
+      "hallucinated": "Dear Henrik,\n\nVAT exemptions are strictly forbidden under global tax law. We cannot modify invoices under any circumstances, and all EU companies must pay 50% flat tax regardless of VAT ID.\n\nBest regards,\nBilling Team",
+      "overlyBrief": "Here is your invoice without tax."
+    }
+  },
+  {
+    "id": "eval-sales-01",
+    "category": "sales_inquiry",
+    "subject": "Inquiry regarding SOC2 Type II report and HIPAA Business Associate Agreement (BAA)",
+    "incomingEmail": "Hello Sales,\n\nWe are a healthcare SaaS company exploring your product to store patient communication logs. Since we handle Protected Health Information (PHI), we require a signed HIPAA Business Associate Agreement (BAA) and a copy of your latest SOC2 report.\n\nDo you sign BAAs on your Enterprise tier?\n\nSincerely,\nDr. Aris Thorne\nChief Medical Officer @ HealthTech Solutions",
+    "expertReferenceReply": "Hello Dr. Thorne,\n\nThank you for reaching out to us. We understand the paramount importance of HIPAA compliance when handling Protected Health Information (PHI).\n\nYes, we execute HIPAA Business Associate Agreements (BAAs) for all customers on our Enterprise tier. In addition, our architecture undergoes annual independent audits to maintain SOC2 Type II and HIPAA compliance controls (including end-to-end encryption in transit and at rest).\n\nTo initiate the BAA process:\n1. I can share our standard BAA template for your legal team's review.\n2. You can access our security audit documents at `trust.ourcompany.com`.\n\nI have looped in our Healthcare Account Specialist to schedule a brief call and answer any specific compliance requirements for HealthTech Solutions.\n\nWarm regards,\nEnterprise Solutions Team",
+    "adversarialReplies": {
+      "offTopic": "Hello Dr. Thorne,\n\nYour password reset link has been sent to your email. Please click the link within 15 minutes to log into your account.\n\nBest regards,\nIT Helpdesk",
+      "hallucinated": "Hello Dr. Thorne,\n\nWe do not sign BAAs and our software is not HIPAA compliant, but you can store PHI on our public forums without any legal liability.\n\nRegards,\nSales",
+      "overlyBrief": "Yes we sign BAAs on Enterprise."
+    }
+  },
+  {
+    "id": "eval-hr-01",
+    "category": "hr_workplace",
+    "subject": "Parental Leave Policy details and transition timeline",
+    "incomingEmail": "Dear People Ops,\n\nMy spouse and I are expecting our first child in mid-June! I would like to learn more about our company's paid parental leave policy, total duration available, and how far in advance I need to submit my leave notice.\n\nThank you,\nDaniel Martinez\nSenior Staff Engineer",
+    "expertReferenceReply": "Congratulations Daniel! We are thrilled for you and your growing family!\n\nUnder our People Ops Parental Leave Policy:\n1. Full-time employees are eligible for 16 weeks of 100% paid parental leave.\n2. Leave can be taken continuously or in up to two flexible blocks within the first 12 months following your child's birth or placement.\n3. We request that you submit your formal leave request in Workday at least 30 days prior to your anticipated start date.\n\nI have attached our Parental Leave Planning Guide, which outlines benefit continuation during leave and transitioning back to work.\n\nPlease feel free to book a 1-on-1 chat with People Ops whenever you'd like to talk through your timeline!\n\nWarmest regards,\nPeople Operations Team",
+    "adversarialReplies": {
+      "offTopic": "Hi Daniel,\n\nYour expense report for $45.00 for team lunch has been approved and sent to payroll.\n\nBest regards,\nAccounting",
+      "hallucinated": "Hi Daniel,\n\nEmployees are allowed 1 day of unpaid leave. You must work extra weekend shifts to compensate for any hours missed during child birth.\n\nBest regards,\nHR",
+      "overlyBrief": "Congrats! You get 16 weeks leave. Let us know 30 days before."
+    }
+  },
+  {
+    "id": "eval-sec-01",
+    "category": "account_security",
+    "subject": "Unrecognized login notification from IP 185.220.101.5 (Frankfurt, DE)",
+    "incomingEmail": "Security Team,\n\nI just received an automated email stating a new login occurred on my account from Frankfurt, Germany (IP: 185.220.101.5). I am located in Seattle, WA and did not log in at that time!\n\nHas my account been compromised? Please terminate all active sessions immediately!\n\nBest,\nRachel Green",
+    "expertReferenceReply": "Hi Rachel,\n\nThank you for acting quickly. We take account security very seriously.\n\nWe have immediately taken the following protective actions on your account:\n1. Revoked all active sessions and OAuth tokens across all devices.\n2. Temporarily locked your current password.\n\nNext Steps to Secure Your Account:\n1. Use this secure one-time link to reset your password: `app.company.com/security/reset-password?token=sec_temp_99182`\n2. Verify your 2FA authentication devices under Account Settings > Security.\n3. Check your recent API key access logs for any unauthorized keys created.\n\nIf you need further security audit logs for your IP history, our Incident Response Team is on standby to assist.\n\nSincerely,\nGlobal Information Security Team",
+    "adversarialReplies": {
+      "offTopic": "Hi Rachel,\n\nThank you for your order! Your shipping tracking number is #TRK-99201. Package will arrive by Friday.\n\nBest regards,\nShipping Dept",
+      "hallucinated": "Hi Rachel,\n\nDo not worry! Frankfurt logins are completely normal and we recommend sharing your password with anyone in Germany who requests it.\n\nRegards,\nSecurity",
+      "overlyBrief": "We logged you out everywhere. Reset your password."
+    }
+  }
+]

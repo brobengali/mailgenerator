@@ -1,0 +1,992 @@
+[
+  {
+    "id": "record_080",
+    "category": "refund_request",
+    "subject": "Refund Request for Duplicate Subscription Charge #INV-8005",
+    "incoming_email": "Hi Billing,\n\nI was charged $299 twice on March 1st for invoice #INV-8005. Please refund the duplicate $299 charge back to my Visa ending 4092.\n\nRegards,\nJennifer Adams",
+    "reference_reply": "Dear Jennifer,\n\nApologies for the double charge! I have issued a full refund of $299 to your Visa ending 4092. Please allow 3–5 business days for the credit to appear.\n\nSincerely,\nBilling Team",
+    "metadata": {
+      "tone": "formal",
+      "intent": "Process refund for duplicate invoice charge",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_096",
+    "category": "order_issue",
+    "subject": "Shipment Delay Notice for Order #ORD-9006",
+    "incoming_email": "Hi Sales Ops,\n\nOrder #ORD-9006 was supposed to arrive yesterday. The tracking status shows 'Pending Customs Clearance'. When will it arrive?\n\nBest,\nMarcus Chen",
+    "reference_reply": "Hi Marcus,\n\nWe contacted the carrier regarding customs clearance. The package was released this morning and is scheduled for final delivery by tomorrow 5 PM.\n\nBest regards,\nLogistics Operations",
+    "metadata": {
+      "tone": "frustrated",
+      "intent": "Provide tracking resolution for delayed order shipment",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_290",
+    "category": "technical_support",
+    "subject": "Webhook failure HTTP 504 Gateway Timeout during push (5)",
+    "incoming_email": "Hello Tech Support,\n\nOur listener endpoint receives HTTP 504 Gateway Timeout errors when your platform pushes event payloads over 5MB. What is the timeout and size limit?\n\nRegards,\nDaniel Martinez",
+    "reference_reply": "Hi Daniel,\n\nOur platform enforces a 10-second HTTP timeout and 2MB payload limit per webhook dispatch. Please filter non-essential fields or return an immediate 200 OK before async background processing.\n\nBest regards,\nDeveloper Relations Team",
+    "metadata": {
+      "tone": "polite",
+      "intent": "Explain webhook timeout and payload size limits",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_030",
+    "category": "meeting_rescheduling",
+    "subject": "Reschedule Notice: Sprint Retrospective (15)",
+    "incoming_email": "Hello,\n\nDue to an urgent customer escalation, I cannot make our 3:00 PM meeting today. Can we reschedule to Thursday at 11:00 AM?\n\nRegards,\nRachel Green",
+    "reference_reply": "Hi Rachel,\n\nNo problem at all. I have moved our meeting to Thursday at 11:00 AM. Hope the escalation gets resolved smoothly!\n\nBest,\nTeam Lead",
+    "metadata": {
+      "tone": "formal",
+      "intent": "Reschedule meeting to Thursday 11 AM",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_163",
+    "category": "document_request",
+    "subject": "Request for Corporate W-9 Form & Tax ID (13)",
+    "incoming_email": "Hi Procurement,\n\nOur accounts payable department requires your signed 2026 Form W-9 before we can process invoice payments.\n\nBest,\nTom Miller",
+    "reference_reply": "Hello Tom,\n\nI have attached our signed 2026 Form W-9 PDF for Enterprise Corp vendor setup. Let us know if you need direct deposit details!\n\nBest regards,\nAccounts Receivable",
+    "metadata": {
+      "tone": "ambiguous",
+      "intent": "Provide corporate W-9 tax form",
+      "difficulty": "easy",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_044",
+    "category": "interview_invitation",
+    "subject": "Interview Invitation: Senior Full-Stack Engineer (14)",
+    "incoming_email": "Dear Applicant,\n\nWe reviewed your application for Senior Full-Stack Engineer and would love to invite you for a 45-minute technical interview next week. Please let us know your availability.\n\nBest regards,\nTech Talent Acquisition",
+    "reference_reply": "Dear Talent Acquisition Team,\n\nThank you for the invitation! I am excited to move forward. I am available next Monday between 1:00 PM – 4:00 PM EST or Wednesday morning.\n\nSincerely,\nCandidate",
+    "metadata": {
+      "tone": "urgent",
+      "intent": "Accept interview invitation and share availability",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_144",
+    "category": "approval_request",
+    "subject": "Approval Request: AWS Cloud Credit Expense ($1,250) (9)",
+    "incoming_email": "Hi Finance,\n\nI am requesting approval for $1,250 in additional AWS cloud compute credits for our AI model benchmark experiment.\n\nThanks,\nVikram Patel",
+    "reference_reply": "Hi Vikram,\n\nYour request for $1,250 in AWS credits has been approved under the R&D compute budget line. Expense code: EXP-509.\n\nBest regards,\nFinance Team",
+    "metadata": {
+      "tone": "ambiguous",
+      "intent": "Approve cloud expense request",
+      "difficulty": "easy",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_060",
+    "category": "job_application",
+    "subject": "Application Status Inquiry: Product Manager Position (#PM-115)",
+    "incoming_email": "Hi Recruiting Team,\n\nI submitted my application for the Product Manager role 2 weeks ago. Could you provide a status update on my candidacy?\n\nThanks,\nMichael Chang",
+    "reference_reply": "Hi Michael,\n\nThank you for following up. Our hiring committee is currently conducting initial resume reviews. We expect to send interview invitations by Friday.\n\nBest regards,\nRecruiting Desk",
+    "metadata": {
+      "tone": "casual",
+      "intent": "Provide job application status update",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_281",
+    "category": "cancellation",
+    "subject": "Cancellation Request: Enterprise Workspace Subscription (11)",
+    "incoming_email": "Hi Billing,\n\nWe would like to cancel our recurring workspace subscription for account ID ws-311 effective at the end of the current billing cycle.\n\nThanks,\nKaren Vance",
+    "reference_reply": "Dear Karen,\n\nWe have processed your subscription cancellation for workspace ws-311. Your account will remain active through May 31st with no further charges.\n\nSincerely,\nSubscription Operations",
+    "metadata": {
+      "tone": "formal",
+      "intent": "Confirm workspace subscription cancellation",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_227",
+    "category": "complaint",
+    "subject": "Unacceptable System Downtime during Peak Hours (#TKT-402)",
+    "incoming_email": "Customer Support,\n\nOur production dashboard was down for 45 minutes today during business hours. This is unacceptable under our SLA agreement.\n\nFrustrated,\nHenrik Weber",
+    "reference_reply": "Dear Henrik,\n\nWe sincerely apologize for today's outage. The issue was caused by a database index lock during a routine patch. We have credited your account 10% SLA credit.\n\nSincerely,\nInfrastructure Operations",
+    "metadata": {
+      "tone": "polite",
+      "intent": "Apologize for outage and issue SLA credit",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_304",
+    "category": "academic_professional",
+    "subject": "Request for Research Dataset Access & Academic Collaboration (4)",
+    "incoming_email": "Dear Professor,\n\nI am researching NLP evaluation methods and would like to request access to your benchmark dataset under academic research license.\n\nSincerely,\nPhD Candidate",
+    "reference_reply": "Dear Researcher,\n\nThank you for your interest. We are happy to grant academic access to our benchmark dataset. Please fill out the attached data transfer agreement.\n\nBest regards,\nResearch Lab",
+    "metadata": {
+      "tone": "frustrated",
+      "intent": "Grant academic dataset license access",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_186",
+    "category": "introduction",
+    "subject": "Introduction: Connect with Product Strategy Lead (6)",
+    "incoming_email": "Hi Team,\n\nI wanted to introduce Laura Bennett from Horizon Ventures who is looking to learn more about your AI automation integrations.\n\nBest,\nMark Vance",
+    "reference_reply": "Hi Laura,\n\nGreat to meet you! I would be delighted to share insights on our AI automation platform. Let me know what time works best for a brief intro call.\n\nWarm regards,\nProduct Strategy Team",
+    "metadata": {
+      "tone": "frustrated",
+      "intent": "Respond warmly to warm intro email",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_004",
+    "category": "meeting_scheduling",
+    "subject": "Scheduling synchronization call re: Q3 Planning (4)",
+    "incoming_email": "Hi Team,\n\nI would like to schedule a 30-minute sync to review our Q3 product roadmap. Are you available next Tuesday at 2:00 PM EST or Wednesday at 10:00 AM EST?\n\nBest,\nAlex Vance",
+    "reference_reply": "Hi Alex,\n\nThanks for reaching out. Tuesday at 2:00 PM EST works great for me. Please send over the calendar invite with the Zoom link.\n\nBest regards,\nSupport Desk",
+    "metadata": {
+      "tone": "formal",
+      "intent": "Schedule Q3 product roadmap review call",
+      "difficulty": "easy",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_131",
+    "category": "deadline_request",
+    "subject": "Request for Deadline Extension: Security Audit Questionnaire (11)",
+    "incoming_email": "Hi Compliance,\n\nDue to legal team reviews, we require a 3-day extension to submit the annual SOC2 security vendor questionnaire (due Friday).\n\nRegards,\nElena Rostova",
+    "reference_reply": "Hi Elena,\n\nWe have extended your submission deadline to next Monday at 5:00 PM EST. Please let us know if you need additional compliance documents!\n\nBest regards,\nSecurity Compliance Team",
+    "metadata": {
+      "tone": "ambiguous",
+      "intent": "Grant 3-day extension for compliance questionnaire",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_050",
+    "category": "job_application",
+    "subject": "Application Status Inquiry: Product Manager Position (#PM-105)",
+    "incoming_email": "Hi Recruiting Team,\n\nI submitted my application for the Product Manager role 2 weeks ago. Could you provide a status update on my candidacy?\n\nThanks,\nMichael Chang",
+    "reference_reply": "Hi Michael,\n\nThank you for following up. Our hiring committee is currently conducting initial resume reviews. We expect to send interview invitations by Friday.\n\nBest regards,\nRecruiting Desk",
+    "metadata": {
+      "tone": "polite",
+      "intent": "Provide job application status update",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_301",
+    "category": "academic_professional",
+    "subject": "Request for Research Dataset Access & Academic Collaboration (1)",
+    "incoming_email": "Dear Professor,\n\nI am researching NLP evaluation methods and would like to request access to your benchmark dataset under academic research license.\n\nSincerely,\nPhD Candidate",
+    "reference_reply": "Dear Researcher,\n\nThank you for your interest. We are happy to grant academic access to our benchmark dataset. Please fill out the attached data transfer agreement.\n\nBest regards,\nResearch Lab",
+    "metadata": {
+      "tone": "polite",
+      "intent": "Grant academic dataset license access",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_115",
+    "category": "project_update",
+    "subject": "Weekly Status Report: Core Migration Sprint (10)",
+    "incoming_email": "Hi Team,\n\nCould you send over the updated completion status for the v2 database migration project before our board meeting?\n\nThanks,\nDavid Sterling",
+    "reference_reply": "Hi David,\n\nThe database migration is currently at 85% completion. We completed data validation yesterday and are on track for cutover by Friday 6 PM.\n\nBest regards,\nEngineering Operations",
+    "metadata": {
+      "tone": "casual",
+      "intent": "Provide weekly project migration progress update",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_224",
+    "category": "follow_up",
+    "subject": "Following up re: Strategic Partnership Proposal (14)",
+    "incoming_email": "Hi Executive Team,\n\nFollowing up on our partnership proposal sent last Tuesday. Have you had a chance to review the terms?\n\nRegards,\nEmily Watson",
+    "reference_reply": "Hi Emily,\n\nThanks for following up. Our executive committee reviewed the proposal yesterday and approved the partnership terms. I will send the draft agreement shortly.\n\nBest regards,\nBusiness Development",
+    "metadata": {
+      "tone": "formal",
+      "intent": "Provide positive follow-up response on proposal",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_157",
+    "category": "document_request",
+    "subject": "Request for Corporate W-9 Form & Tax ID (7)",
+    "incoming_email": "Hi Procurement,\n\nOur accounts payable department requires your signed 2026 Form W-9 before we can process invoice payments.\n\nBest,\nTom Miller",
+    "reference_reply": "Hello Tom,\n\nI have attached our signed 2026 Form W-9 PDF for Enterprise Corp vendor setup. Let us know if you need direct deposit details!\n\nBest regards,\nAccounts Receivable",
+    "metadata": {
+      "tone": "formal",
+      "intent": "Provide corporate W-9 tax form",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_097",
+    "category": "order_issue",
+    "subject": "Shipment Delay Notice for Order #ORD-9007",
+    "incoming_email": "Hi Sales Ops,\n\nOrder #ORD-9007 was supposed to arrive yesterday. The tracking status shows 'Pending Customs Clearance'. When will it arrive?\n\nBest,\nMarcus Chen",
+    "reference_reply": "Hi Marcus,\n\nWe contacted the carrier regarding customs clearance. The package was released this morning and is scheduled for final delivery by tomorrow 5 PM.\n\nBest regards,\nLogistics Operations",
+    "metadata": {
+      "tone": "casual",
+      "intent": "Provide tracking resolution for delayed order shipment",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_155",
+    "category": "document_request",
+    "subject": "Request for Corporate W-9 Form & Tax ID (5)",
+    "incoming_email": "Hi Procurement,\n\nOur accounts payable department requires your signed 2026 Form W-9 before we can process invoice payments.\n\nBest,\nTom Miller",
+    "reference_reply": "Hello Tom,\n\nI have attached our signed 2026 Form W-9 PDF for Enterprise Corp vendor setup. Let us know if you need direct deposit details!\n\nBest regards,\nAccounts Receivable",
+    "metadata": {
+      "tone": "polite",
+      "intent": "Provide corporate W-9 tax form",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_028",
+    "category": "meeting_rescheduling",
+    "subject": "Reschedule Notice: Sprint Retrospective (13)",
+    "incoming_email": "Hello,\n\nDue to an urgent customer escalation, I cannot make our 3:00 PM meeting today. Can we reschedule to Thursday at 11:00 AM?\n\nRegards,\nRachel Green",
+    "reference_reply": "Hi Rachel,\n\nNo problem at all. I have moved our meeting to Thursday at 11:00 AM. Hope the escalation gets resolved smoothly!\n\nBest,\nTeam Lead",
+    "metadata": {
+      "tone": "ambiguous",
+      "intent": "Reschedule meeting to Thursday 11 AM",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_112",
+    "category": "project_update",
+    "subject": "Weekly Status Report: Core Migration Sprint (7)",
+    "incoming_email": "Hi Team,\n\nCould you send over the updated completion status for the v2 database migration project before our board meeting?\n\nThanks,\nDavid Sterling",
+    "reference_reply": "Hi David,\n\nThe database migration is currently at 85% completion. We completed data validation yesterday and are on track for cutover by Friday 6 PM.\n\nBest regards,\nEngineering Operations",
+    "metadata": {
+      "tone": "ambiguous",
+      "intent": "Provide weekly project migration progress update",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_145",
+    "category": "approval_request",
+    "subject": "Approval Request: AWS Cloud Credit Expense ($1,250) (10)",
+    "incoming_email": "Hi Finance,\n\nI am requesting approval for $1,250 in additional AWS cloud compute credits for our AI model benchmark experiment.\n\nThanks,\nVikram Patel",
+    "reference_reply": "Hi Vikram,\n\nYour request for $1,250 in AWS credits has been approved under the R&D compute budget line. Expense code: EXP-510.\n\nBest regards,\nFinance Team",
+    "metadata": {
+      "tone": "frustrated",
+      "intent": "Approve cloud expense request",
+      "difficulty": "easy",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_099",
+    "category": "order_issue",
+    "subject": "Shipment Delay Notice for Order #ORD-9009",
+    "incoming_email": "Hi Sales Ops,\n\nOrder #ORD-9009 was supposed to arrive yesterday. The tracking status shows 'Pending Customs Clearance'. When will it arrive?\n\nBest,\nMarcus Chen",
+    "reference_reply": "Hi Marcus,\n\nWe contacted the carrier regarding customs clearance. The package was released this morning and is scheduled for final delivery by tomorrow 5 PM.\n\nBest regards,\nLogistics Operations",
+    "metadata": {
+      "tone": "urgent",
+      "intent": "Provide tracking resolution for delayed order shipment",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_162",
+    "category": "document_request",
+    "subject": "Request for Corporate W-9 Form & Tax ID (12)",
+    "incoming_email": "Hi Procurement,\n\nOur accounts payable department requires your signed 2026 Form W-9 before we can process invoice payments.\n\nBest,\nTom Miller",
+    "reference_reply": "Hello Tom,\n\nI have attached our signed 2026 Form W-9 PDF for Enterprise Corp vendor setup. Let us know if you need direct deposit details!\n\nBest regards,\nAccounts Receivable",
+    "metadata": {
+      "tone": "formal",
+      "intent": "Provide corporate W-9 tax form",
+      "difficulty": "hard",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_183",
+    "category": "introduction",
+    "subject": "Introduction: Connect with Product Strategy Lead (3)",
+    "incoming_email": "Hi Team,\n\nI wanted to introduce Laura Bennett from Horizon Ventures who is looking to learn more about your AI automation integrations.\n\nBest,\nMark Vance",
+    "reference_reply": "Hi Laura,\n\nGreat to meet you! I would be delighted to share insights on our AI automation platform. Let me know what time works best for a brief intro call.\n\nWarm regards,\nProduct Strategy Team",
+    "metadata": {
+      "tone": "casual",
+      "intent": "Respond warmly to warm intro email",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_037",
+    "category": "interview_invitation",
+    "subject": "Interview Invitation: Senior Full-Stack Engineer (7)",
+    "incoming_email": "Dear Applicant,\n\nWe reviewed your application for Senior Full-Stack Engineer and would love to invite you for a 45-minute technical interview next week. Please let us know your availability.\n\nBest regards,\nTech Talent Acquisition",
+    "reference_reply": "Dear Talent Acquisition Team,\n\nThank you for the invitation! I am excited to move forward. I am available next Monday between 1:00 PM – 4:00 PM EST or Wednesday morning.\n\nSincerely,\nCandidate",
+    "metadata": {
+      "tone": "urgent",
+      "intent": "Accept interview invitation and share availability",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_239",
+    "category": "complaint",
+    "subject": "Unacceptable System Downtime during Peak Hours (#TKT-414)",
+    "incoming_email": "Customer Support,\n\nOur production dashboard was down for 45 minutes today during business hours. This is unacceptable under our SLA agreement.\n\nFrustrated,\nHenrik Weber",
+    "reference_reply": "Dear Henrik,\n\nWe sincerely apologize for today's outage. The issue was caused by a database index lock during a routine patch. We have credited your account 10% SLA credit.\n\nSincerely,\nInfrastructure Operations",
+    "metadata": {
+      "tone": "formal",
+      "intent": "Apologize for outage and issue SLA credit",
+      "difficulty": "easy",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  },
+  {
+    "id": "record_042",
+    "category": "interview_invitation",
+    "subject": "Interview Invitation: Senior Full-Stack Engineer (12)",
+    "incoming_email": "Dear Applicant,\n\nWe reviewed your application for Senior Full-Stack Engineer and would love to invite you for a 45-minute technical interview next week. Please let us know your availability.\n\nBest regards,\nTech Talent Acquisition",
+    "reference_reply": "Dear Talent Acquisition Team,\n\nThank you for the invitation! I am excited to move forward. I am available next Monday between 1:00 PM – 4:00 PM EST or Wednesday morning.\n\nSincerely,\nCandidate",
+    "metadata": {
+      "tone": "polite",
+      "intent": "Accept interview invitation and share availability",
+      "difficulty": "medium",
+      "requires_action": true,
+      "key_facts": {
+        "dates": [
+          "Tuesday",
+          "Wednesday",
+          "Friday",
+          "March 1st"
+        ],
+        "times": [
+          "2:00 PM EST",
+          "10:00 AM EST",
+          "5:00 PM"
+        ],
+        "numbers": [
+          "$299",
+          "$1,250",
+          "10,000 req/min",
+          "2MB",
+          "10s"
+        ]
+      }
+    }
+  }
+]
